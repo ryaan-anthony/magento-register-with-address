@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ryaan_RegisterAddress>
+            <version>1.0.0</version>
+        </Ryaan_RegisterAddress>
+    </modules>
+    <global>
+        <helpers>
+            <registeraddress>
+                <class>Ryaan_RegisterAddress_Helper</class>
+            </registeraddress>
+        </helpers>
+        <models>
+            <registeraddress>
+                <class>Ryaan_RegisterAddress_Model</class>
+            </registeraddress>
+        </models>
+    </global>
+    <frontend>
+        <events>
+            <controller_action_layout_generate_blocks_after>
+                <observers>
+                    <register_with_address>
+                        <type>model</type>
+                        <class>registeraddress/observer</class>
+                        <method>registerWithAddress</method>
+                    </register_with_address>
+                </observers>
+            </controller_action_layout_generate_blocks_after>
+        </events>
+    </frontend>
+</config>
